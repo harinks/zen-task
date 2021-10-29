@@ -1,0 +1,90 @@
+
+2. Write a blog on Difference between HTTP1.1 vs HTTP2?
+
+HTTP is short for Hypertext Transfer Protocol. 
+It is the process involved when a user types in a URL on the World Wide Web. 
+After this URL is typed in, your browser will send an HTTP request to a server to gather the desired web page.
+
+
+HTTP 1.1
+
+>It was released in 1997 and it became internet standard.
+>HTTP1.1 loads a single request for every TCP connection.
+>It supports connection reuse i.e. for every TCP connection there could be multiple requests and responses.
+>HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it.
+>and pipelining is introduced where the client can request several resources from the server at once. 
+>However, pipelining was hard to implement due to issues such as head-of-line blocking and was not a feasible solution.
+>HTTP/1.1 messages can be unencrypted (where web site addresses start http://) or encrypted with HTTPS (where web site address start with https://).
+
+
+
+HTTP 2
+>It was released in 2015 by google-introducing multiplexing and server push.
+>HTTP2 is much faster and more reliable than HTTP1.1
+>HTTP2 avoids network delay by using multiplexing.
+>HTTP2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. 
+>It is done using streams which can be prioritized, can have dependencies and individual flow control. 
+>It also provides a feature called server push that allows the server to send data that the client will need but has not yet requested.
+>HTTP2 messages also can be unencrypted (where web site addresses start http://) or encrypted with HTTPS (where web site address start with https://).
+
+
+
+
+3. Write a blog about objects and its internal representation in Javascript?
+
+>Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript.
+>Objects are more complex and each object may contain any combination of
+	*primitive data type
+	*reference value data type
+>objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. 
+>These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+>For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like updateAddress, updateName, etc.
+
+Objects and properties
+
+>A JavaScript object has properties associated with it. 
+>A property of an object can be explained as a variable that is attached to the object. 
+>Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. 
+>The properties of an object define the characteristics of the object.for Eg, if object name is myCar, it will properities of model, colour, size, etc.
+	var myCar = new Object();
+	myCar.make = 'Ford';
+	myCar.model = 'Mustang';
+	myCar.year = 1969;
+Unassigned properties of an object are undefined (and not null).
+
+
+Creating Objects In JavaScript :
+
+=>Create JavaScript Object with Object Literal
+
+  One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces as shown below
+	let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'};
+
+=>Create JavaScript Object with Constructor
+
+  Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavor as shown below
+
+	function Vehicle(name, maker) {
+   	this.name = name;
+   	this.maker = maker;
+	}
+	let car1 = new Vehicle(’Fiesta’, 'Ford’);
+	let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)
+	console.log(car1.name);    
+	console.log(car2.name);  
+
+=>Using the JavaScript Keyword new
+
+  The following example also creates a new JavaScript object with four properties:
+
+	var person = new Object();
+	person.firstName = “John”;
+	person.lastName = “Doe”;
+	person.age = 50;
+	person.eyeColor = “blue”;
+
+=>Using the Object.create method
+
+	Objects can also be created using the Object.create() method. 
+	This method can be very useful, because it allows you to choose the prototype object for the object you want to create, 
+	without having to define a constructor function.
